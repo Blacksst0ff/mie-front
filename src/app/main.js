@@ -26,6 +26,14 @@ Vue.use(VueClipboard)
 
 Vue.use(ColorThemePlugin, {
   // override colors here.
+  primary: '#230158',
+  secondary: '#6e7ff1',
+  success: '#8ddc88',
+  info: '#71baff',
+  danger: '#f8706d',
+  warning: '#ffd652',
+  gray: '#8396a5',
+  dark: '#34495e',
 })
 
 router.beforeEach((to, from, next) => {

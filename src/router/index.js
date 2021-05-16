@@ -82,6 +82,67 @@ export default new Router({
           default: true,
         },
         {
+          name: 'wallet',
+          path: 'wallet',
+          component: EmptyParentComponent,
+          children: [
+            {
+              path: 'customer',
+              component: () => import('../components/customer/Customer.vue'),
+              children: [
+                {
+                  name: 'customer',
+                  path: '',
+                  component: () => import('../components/customer/CustomerList.vue'),
+                  default: true,
+                },
+                {
+                  name: 'customer_view',
+                  path: ':id',
+                  component: () => import('../components/customer/CustomerView.vue'),
+                  props: true,
+                },
+              ],
+            },
+            {
+              path: 'deal',
+              component: () => import('../components/deal/Deal.vue'),
+              children: [
+                {
+                  name: 'deal',
+                  path: '',
+                  component: () => import('../components/deal/DealList.vue'),
+                  default: true,
+                },
+                {
+                  name: 'deal_view',
+                  path: ':id',
+                  component: () => import('../components/deal/DealView.vue'),
+                  props: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          path: 'user',
+          component: EmptyParentComponent,
+          children: [
+            {
+              name: 'user',
+              path: '',
+              component: () => import('../components/user/UserList.vue'),
+              default: true,
+            },
+            {
+              name: 'user_view',
+              path: ':id',
+              component: () => import('../components/user/UserView.vue'),
+              props: true,
+            },
+          ],
+        },
+        {
           name: 'statistics',
           path: 'statistics',
           component: EmptyParentComponent,

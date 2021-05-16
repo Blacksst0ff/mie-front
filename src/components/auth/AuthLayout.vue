@@ -1,5 +1,5 @@
 <template>
-  <div class="auth-layout row align-content--center">
+  <div class="auth-layout row column reverse align-content--center">
     <div class="flex xs12 pa-3 flex-center">
       <router-link class="py-5 flex-center" to="/">
         <va-icon-vuestic />
@@ -61,7 +61,9 @@ export default {
 <style lang="scss">
 .auth-layout {
   min-height: 100vh;
-  background-image: linear-gradient(to right, #0e4ac4, #002c85);
+  background-image: url("/img/ECONOCOM_ODC_V2b_210315_ECON_COUV_LINKEDIN_3.png");
+  background-size: cover;
+  background-position: center;
 
   &__card {
     width: 100%;

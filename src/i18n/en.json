@@ -17,6 +17,19 @@
     "text": "If you feel that it’s not right, please send us a message at ",
     "back_button": "Back to dashboard"
   },
+  "customer": {
+    "tab": {
+      "first": "General",
+      "second": "Users",
+      "third": "Deals"
+    },
+    "deal": {
+      "title": "Last deals"
+    },
+    "user": {
+      "title": "Attached users"
+    }
+  },
   "rating": {
     "singleIcon": "Single Icon",
     "twoIcons": "Two Icons",
@@ -66,7 +79,11 @@
     "danger": "Danger",
     "warning": "Warning",
     "gray": "Gray",
-    "dark": "Dark"
+    "dark": "Dark",
+    "add": "Add",
+    "edit": "Edit",
+    "update": "Update",
+    "undo": "Return to list"
   },
   "charts": {
     "horizontalBarChart": "Horizontal Bar Chart",
@@ -120,18 +137,18 @@
     },
     "info": {
       "componentRichTheme": "component-rich theme",
-      "completedPullRequests": "completed pull requests",
-      "users": "users",
-      "points": "points",
-      "units": "units",
+      "completedPullRequests": "Satisfaction Client",
+      "customer": "Clients",
+      "points": "Rex",
+      "units": "Affaires",
       "exploreGallery": "Explore gallery",
       "viewLibrary": "View Library",
-      "commits": "commits",
-      "components": "components",
-      "teamMembers": "team members"
+      "commits": "Validés",
+      "components": "Insuffisants",
+      "teamMembers": "Affaires necessite votre attention"
     },
     "table": {
-      "title": "Awesome table",
+      "title": "Listing clients",
       "brief": "Brief",
       "detailed": "Detailed",
       "resolve": "Resolve",
@@ -209,6 +226,21 @@
     }
   },
   "forms": {
+    "edit": "Edit",
+    "customer": {
+      "add": {
+        "title": "Add customer",
+        "submitText": "Add"
+      },
+      "edit": {
+        "title": "Edit customer",
+        "submitText": "Edit"
+      },
+      "name": "Name",
+      "logo": "Logo",
+      "country": "Country",
+      "address": "Address"
+    },
     "controls": {
       "title": "Checkboxes, Radios, Switches, Toggles",
       "radioDisabled": "Disabled Radio",
@@ -278,7 +310,8 @@
     "english": "English",
     "spanish": "Spanish",
     "simplified_chinese": "Simplified Chinese",
-    "persian": "Persian"
+    "persian": "Persian",
+    "french": "French"
   },
   "menu": {
     "auth": "Auth",
@@ -287,6 +320,7 @@
     "charts": "Charts",
     "colorPickers": "Color Pickers",
     "collapses": "Collapses",
+    "customer": "Customers",
     "timelines": "Timelines",
     "dashboard": "Dashboard",
     "formElements": "Form Elements",
@@ -319,7 +353,9 @@
     "spacing": "Spacing",
     "sliders": "Sliders",
     "popovers": "Popovers",
-    "chat": "Chat"
+    "chat": "Chat",
+    "wallet": "Wallet",
+    "deal": "Deals"
   },
   "messages": {
     "all": "See all messages",
@@ -419,6 +455,9 @@
     "routerSupport": "Router Support"
   },
   "tables": {
+    "customer": {
+      "tableTitle": "My customers"
+    },
     "basic": "Basic Table",
     "stripedHoverable": "Striped, Hoverable",
     "labelsActions": "Labels, Actions as Buttons",

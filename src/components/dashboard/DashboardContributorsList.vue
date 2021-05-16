@@ -39,7 +39,7 @@ export default {
     return {
       contributors: [],
       loading: false,
-      progressMax: 392,
+      progressMax: 100,
       visibleList: [],
       step: 5,
     }

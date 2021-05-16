@@ -1,24 +1,24 @@
 <template>
   <div class="row row-equal">
-    <div class="flex xl6 xs12">
-      <div class="row">
-        <div
-          class="flex xs12 sm4"
-          v-for="(info, idx) in infoTiles"
-          :key="idx"
-        >
-          <va-card class="mb-4" :color="info.color">
-            <p class="display-2 mb-0" style="color: white;">{{ info.value }}</p>
-            <p>{{$t('dashboard.info.' + info.text)}}</p>
-          </va-card>
-        </div>
-      </div>
-
+    <div class="flex xl12 xs12">
       <div class="row">
         <div class="flex xs12 md6">
           <va-card>
-            <p class="display-2 mb-1" :style="{color: this.$themes.primary}">291</p>
-            <p class="no-wrap">{{$t('dashboard.info.completedPullRequests')}}</p>
+            <div class="row">
+              <div class="flex md8 xs8">
+                <p class="no-wrap">{{$t('dashboard.info.completedPullRequests')}}</p>
+                <va-progress-bar :value="satisfaction">{{ satisfaction }}%</va-progress-bar>
+              </div>
+              <div class="flex md4 xs4 text--center">
+                <i :class= meteoIcon id="icon-satisfaction"></i>
+              </div>
+            </div>
+            <!--<p class="display-2 mb-1" :style="{color: this.$themes.primary}">97%</p>
+            <va-progress-circle
+              :value=value
+              :color=this.$themes.primary
+            >{{ value }}%
+            </va-progress-circle>-->
           </va-card>
         </div>
         <div class="flex xs12 md6">
@@ -26,7 +26,7 @@
             <div class="row row-separated">
               <div class="flex xs4">
                 <p class="display-2 mb-1 text--center" :style="{color: this.$themes.primary}">3</p>
-                <p class="text--center mb-1">{{$t('dashboard.info.users')}}</p>
+                <p class="text--center mb-1">{{$t('dashboard.info.customer')}}</p>
               </div>
               <div class="flex xs4">
                 <p class="display-2 mb-1 text--center" :style="{color: this.$themes.info}">24</p>
@@ -40,9 +40,22 @@
           </va-card>
         </div>
       </div>
+
+      <div class="row">
+        <div
+          class="flex xs12 sm4"
+          v-for="(info, idx) in infoTiles"
+          :key="idx"
+        >
+          <va-card class="mb-4" :color="info.color">
+            <p class="display-2 mb-0" style="color: white;">{{ info.value }}</p>
+            <p>{{$t('dashboard.info.' + info.text)}}</p>
+          </va-card>
+        </div>
+      </div>
     </div>
 
-    <div class="flex xs12 md6 xl3">
+    <!--<div class="flex xs12 md6 xl3">
       <va-card
         stripe="info"
         :title="$t('dashboard.info.componentRichTheme')"
@@ -85,7 +98,7 @@
           <img :src="images[currImage]" style="height: 50vh; max-width: 100%;">
         </transition>
       </div>
-    </va-modal>
+    </va-modal>-->
   </div>
 </template>
 
@@ -119,7 +132,14 @@ export default {
         'https://i.imgur.com/2JxhWD6.jpg',
         'https://i.imgur.com/MpiOWbM.jpg',
       ],
+      satisfaction: Math.floor(Math.random() * 101),
+      color: 'warning', /* ['danger', 'success', 'info', 'gray', 'warning', 'black'] */
+      meteoIcon: 'va-icon fontelico fontelico-emo-coffee',
     }
+  },
+  mounted () {
+    this.animateValue()
+    this.showMeteoIcon()
   },
   methods: {
     showModal () {
@@ -131,12 +151,35 @@ export default {
     showNextImage () {
       this.currImage = this.currImage === this.images.length - 1 ? 0 : this.currImage + 1
     },
+    showMeteoIcon () {
+      if (this.satisfaction === 100) {
+        this.meteoIcon = 'va-icon fontelico fontelico-emo-sunglasses'
+      } else if (this.satisfaction >= 90) {
+        this.meteoIcon = 'va-icon fontelico fontelico-emo-beer'
+      } else if (this.satisfaction >= 80) {
+        this.meteoIcon = 'va-icon fontelico fontelico-emo-grin'
+      } else if (this.satisfaction >= 70) {
+        this.meteoIcon = 'va-icon fontelico fontelico-emo-happy'
+      } else if (this.satisfaction >= 50) {
+        this.meteoIcon = 'va-icon fontelico fontelico-emo-displeased'
+      } else if (this.satisfaction >= 40) {
+        this.meteoIcon = 'va-icon fontelico fontelico-emo-unhappy'
+      } else if (this.satisfaction >= 25) {
+        this.meteoIcon = 'va-icon fontelico fontelico-emo-angry'
+      } else if (this.satisfaction !== 0) {
+        this.meteoIcon = 'va-icon fontelico fontelico-emo-cry'
+      } else {
+        this.meteoIcon = 'va-icon fontelico fontelico-emo-shoot'
+      }
+    },
+    animateValue () {
+      setTimeout(() => (this.value = 100))
+    },
   },
 }
 </script>
 
-<style lang="scss">
-  .row-separated {
+<style lang="scss">mo .row-separated {
     .flex + .flex {
       border-left: 1px solid #e3eaeb;
     }
@@ -159,6 +202,17 @@ export default {
       @include media-breakpoint-up(md) {
         padding-bottom: 0 !important;
       }
+    }
+
+    .va-progress-bar__info {
+      font-size: 1.175rem;
+    }
+
+    #icon-satisfaction {
+      font-size: 34px;
+      // position: absolute;
+      // top: 15px;
+      // right: 15px;
     }
   }
 </style>

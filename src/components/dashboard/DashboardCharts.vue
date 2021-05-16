@@ -1,6 +1,6 @@
 <template>
   <div class="row row-equal">
-    <div class="flex xs12 xl6">
+    <div class="flex xs12 md12 xl8">
       <va-card :title="$t('dashboard.charts.trendyTrends')">
         <va-button
           small
@@ -16,7 +16,7 @@
       </va-card>
     </div>
 
-    <div class="flex xs12 md6 xl3">
+    <!--<div class="flex xs12 md6 xl3">
       <va-card :title="$t('dashboard.charts.loadingSpeed')">
         <va-button
           icon="fa fa-print"
@@ -27,9 +27,9 @@
         />
         <va-chart class="chart chart--donut" :data="donutChartData" type="donut"/>
       </va-card>
-    </div>
+    </div>-->
 
-    <div class="flex xs12 md6 xl3">
+    <div class="flex xs12 md12 xl4">
       <dashboard-contributors-chart/>
     </div>
   </div>

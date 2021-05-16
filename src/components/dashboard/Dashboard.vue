@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
-    <dashboard-charts />
     <dashboard-info-block />
+    <dashboard-charts />
     <div class="row">
       <div class="flex xs12">
         <dashboard-table />

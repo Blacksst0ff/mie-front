@@ -1,0 +1,198 @@
+[
+  {
+    "id": "1",
+    "name": "Bonduelle",
+    "email": "contact@bonduelle.com",
+    "phone": "+1 (950) 575-2330",
+    "picture": "/img/customers/bonduelle.jpg",
+    "address": "642 Overbaugh Place, Loretto, Rhode Island, 3756",
+    "country": "Cayman Islands",
+    "trend": "up",
+    "hasReport": false,
+    "distinct_entity": true,
+    "user": [
+      {
+        "id": "2",
+        "picture": "/img/users/MDO.jpeg",
+        "name": "Doose Mickael",
+        "profil": "Business Manager",
+        "email": "mickael.doose@econocom.com",
+        "phone": "+33 7 64 39 21 91",
+        "address": "VILLENEUVE D ASCQ",
+        "manager": "1"
+      }
+    ],
+    "deal": [
+      {
+        "id": "1",
+        "warning": true,
+        "name": "INFOGERANCE SDP"
+      },
+      {
+        "id": "2",
+        "warning": false,
+        "name": "HD - CDS"
+      },
+      {
+        "id": "3",
+        "warning": false,
+        "name": "Exploitation - CDS"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Volkswagen",
+    "email": "contact@vw.com",
+    "phone": "+1 (950) 575-2330",
+    "picture": "/img/customers/vw.png",
+    "address": "642 Overbaugh Place, Loretto, Rhode Island, 3756",
+    "country": "Cayman Islands",
+    "trend": "down",
+    "hasReport": true,
+    "distinct_entity": false,
+    "user": [
+      {
+        "id": "2",
+        "picture": "/img/users/MDO.jpeg",
+        "name": "Doose Mickael",
+        "profil": "Business Manager",
+        "email": "mickael.doose@econocom.com",
+        "phone": "+33 7 64 39 21 91",
+        "address": "VILLENEUVE D ASCQ",
+        "manager": "1"
+      }
+    ],
+    "deal": [
+      {
+        "id": "4",
+        "warning": false,
+        "name": "Infogérance utilisateur"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Poclain",
+    "email": "contact@poclain.com",
+    "phone": "+1 (950) 575-2330",
+    "picture": "/img/customers/poclain.jpg",
+    "address": "642 Overbaugh Place, Loretto, Rhode Island, 3756",
+    "country": "Cayman Islands",
+    "trend": "up",
+    "hasReport": false,
+    "distinct_entity": false,
+    "user": [
+      {
+        "id": "2",
+        "picture": "/img/users/MDO.jpeg",
+        "name": "Doose Mickael",
+        "profil": "Business Manager",
+        "email": "mickael.doose@econocom.com",
+        "phone": "+33 7 64 39 21 91",
+        "address": "VILLENEUVE D ASCQ",
+        "manager": "1"
+      }
+    ],
+    "deal": [
+      {
+        "id": "5",
+        "warning": false,
+        "name": "Support HD - SDP"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "GHICL",
+    "email": "contact@ghicl.com",
+    "phone": "+1 (950) 575-2330",
+    "picture": "/img/customers/ghicl.jpg",
+    "address": "642 Overbaugh Place, Loretto, Rhode Island, 3756",
+    "country": "Cayman Islands",
+    "trend": "down",
+    "hasReport": true,
+    "distinct_entity": false,
+    "user": [
+      {
+        "id": "2",
+        "picture": "/img/users/MDO.jpeg",
+        "name": "Doose Mickael",
+        "profil": "Business Manager",
+        "email": "mickael.doose@econocom.com",
+        "phone": "+33 7 64 39 21 91",
+        "address": "VILLENEUVE D ASCQ",
+        "manager": "1"
+      }
+    ],
+    "deal": [
+      {
+        "id": "6",
+        "warning": false,
+        "name": "Support HD"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "EUROTUNNEL",
+    "email": "contact@eurotunnel.com",
+    "phone": "+1 (950) 575-2330",
+    "picture": "/img/customers/eurotunnel.jpg",
+    "address": "642 Overbaugh Place, Loretto, Rhode Island, 3756",
+    "country": "Cayman Islands",
+    "trend": "up",
+    "hasReport": false,
+    "distinct_entity": false,
+    "user": [
+      {
+        "id": "2",
+        "picture": "/img/users/MDO.jpeg",
+        "name": "Doose Mickael",
+        "profil": "Business Manager",
+        "email": "mickael.doose@econocom.com",
+        "phone": "+33 7 64 39 21 91",
+        "address": "VILLENEUVE D ASCQ",
+        "manager": "1"
+      }
+    ],
+    "deal": [
+      {
+        "id": "7",
+        "warning": true,
+        "name": "TMA"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "RABOT DUTILLEUL",
+    "email": "contact@rabot-dutilleul.com",
+    "phone": "+1 (950) 575-2330",
+    "picture": "/img/customers/rabot_dutilleul.png",
+    "address": "642 Overbaugh Place, Loretto, Rhode Island, 3756",
+    "country": "Cayman Islands",
+    "trend": "none",
+    "hasReport": false,
+    "distinct_entity": false,
+    "user": [
+      {
+        "id": "2",
+        "picture": "/img/users/MDO.jpeg",
+        "name": "Doose Mickael",
+        "profil": "Business Manager",
+        "email": "mickael.doose@econocom.com",
+        "phone": "+33 7 64 39 21 91",
+        "address": "VILLENEUVE D ASCQ",
+        "manager": "1"
+      }
+    ],
+    "deal": [
+      {
+        "id": "8",
+        "warning": false,
+        "name": "Support utilisateurs"
+      }
+    ]
+  }
+]

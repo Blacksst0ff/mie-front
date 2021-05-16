@@ -12,6 +12,24 @@ export const navigationRoutes = {
       },
     },
     {
+      name: 'wallet',
+      displayName: 'menu.wallet',
+      meta: {
+        iconClass: 'va-icon fa fa-folder-open-o',
+      },
+      disabled: true,
+      children: [
+        {
+          name: 'customer',
+          displayName: 'menu.customer',
+        },
+        {
+          name: 'deal',
+          displayName: 'menu.deal',
+        },
+      ],
+    },
+    {
       name: 'statistics',
       displayName: 'menu.statistics',
       meta: {

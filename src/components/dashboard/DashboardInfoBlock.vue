@@ -179,7 +179,8 @@ export default {
 }
 </script>
 
-<style lang="scss">mo .row-separated {
+<style lang="scss">
+  .row-separated {
     .flex + .flex {
       border-left: 1px solid #e3eaeb;
     }

@@ -82,7 +82,7 @@
 
 <script>
 
-import dataUsers from '../customer/components/data/users.json'
+import dataUsers from '../customer/data/users.json'
 
 export default {
   name: 'user-card',

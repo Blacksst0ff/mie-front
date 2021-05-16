@@ -7,7 +7,7 @@
   >
     <span
       class="profile-dropdown__anchor" slot="anchor"
-      :style="{color: this.$themes.primary}"
+      :style="{color: this.$themes.gray}"
     >
       <slot/>
       <va-icon

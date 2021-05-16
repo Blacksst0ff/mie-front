@@ -31,25 +31,29 @@ export default {
       type: Array,
       default: () => [
         {
+          code: 'fr',
+          name: 'french',
+        },
+        {
           code: 'gb',
           name: 'english',
         },
-        {
-          code: 'es',
-          name: 'spanish',
-        },
-        {
-          code: 'br',
-          name: 'brazilian_portuguese',
-        },
-        {
-          code: 'cn',
-          name: 'simplified_chinese',
-        },
-        {
-          code: 'ir',
-          name: 'persian',
-        },
+        // {
+        //   code: 'es',
+        //   name: 'spanish',
+        // },
+        // {
+        //   code: 'br',
+        //   name: 'brazilian_portuguese',
+        // },
+        // {
+        //   code: 'cn',
+        //   name: 'simplified_chinese',
+        // },
+        // {
+        //   code: 'ir',
+        //   name: 'persian',
+        // },
       ],
     },
   },

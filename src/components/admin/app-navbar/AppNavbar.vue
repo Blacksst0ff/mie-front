@@ -27,7 +27,7 @@
         </router-link>
       </div>
       <div class="app-navbar__center lg5 md4">
-        <span
+        <!--<span
           class="app-navbar__text"
           :style="{color: this.$themes.gray}"
         >
@@ -49,7 +49,7 @@
           target="_blank"
         >
           {{$t('navbar.repository')}}
-        </va-button>
+        </va-button>-->
       </div>
       <app-navbar-actions
         class="app-navbar__actions md5 lg4"
@@ -93,7 +93,7 @@ export default {
   },
   data () {
     return {
-      userName: 'Vasili S',
+      userName: 'MDO',
     }
   },
   computed: {
@@ -115,7 +115,7 @@ export default {
     },
     navbarStyle () {
       const style = {
-        backgroundColor: 'white',
+        backgroundColor: '#3e0d81',
       }
 
       if (this.contextConfig.gradient) {
@@ -200,7 +200,7 @@ $nav-border-side-width: 3.1875rem;
   }
 
   &__logo {
-    width: 9.5rem;
+    width: 12.5rem;
     height: auto;
     align-items: center;
 

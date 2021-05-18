@@ -12,6 +12,8 @@ import { VuesticPlugin } from '../services/vuestic-ui/components'
 import '../i18n/index'
 import YmapPlugin from 'vue-yandex-maps'
 import VueClipboard from 'vue-clipboard2'
+import VueSweetalert2 from 'vue-sweetalert2'
+import 'sweetalert2/dist/sweetalert2.min.css'
 
 import '../metrics'
 import '../registerServiceWorker'
@@ -23,6 +25,7 @@ consoleBuildInfo()
 Vue.use(VuesticPlugin)
 Vue.use(YmapPlugin)
 Vue.use(VueClipboard)
+Vue.use(VueSweetalert2)
 
 Vue.use(ColorThemePlugin, {
   // override colors here.

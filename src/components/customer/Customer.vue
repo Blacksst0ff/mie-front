@@ -1,6 +1,9 @@
 <template>
   <div class="customer">
-    <va-card :title="$t('tables.customer.tableTitle')">
+    <va-card>
+      <!-- <template slot="header">
+        <breadcrumbs />
+      </template> -->
       <template slot="actions">
         <va-button
           v-if="isList()"
@@ -11,8 +14,9 @@
           {{ $t('buttons.add') }}
         </va-button>
         <va-button
-          v-if="isView()"
-          outline small
+          v-if="isView ()"
+          outline
+          small
           icon="fa fa-chevron-circle-left"
           color="gray"
           :to="{name: 'customer'}"
@@ -23,8 +27,9 @@
       <router-view :key="$route.name"></router-view>
       <va-modal
         v-model="showCustomerAddModal"
-        :okText=" $t('forms.customer.add.submitText') "
-        :cancelText=" $t('modal.cancel') "
+        :okText=" $t('forms.customer.add.submit.step1') "
+        :cancelText=" $t('forms.cancel') "
+        size="large"
       >
         <customer-add />
       </va-modal>
@@ -33,12 +38,13 @@
 </template>
 
 <script>
-
 import CustomerAdd from './components/CustomerAdd'
+// import Breadcrumb from '../custom/Breadcrumb'
 
 export default {
   components: {
     CustomerAdd,
+  //  Breadcrumb,
   },
   data () {
     return {
@@ -48,10 +54,15 @@ export default {
   },
   methods: {
     isList () {
-      return this.$router.history.current.name === 'customer'
+      return this.$route.name === 'customer'
     },
     isView () {
-      return this.$router.history.current.name === 'customer_view'
+      return this.$route.name === 'customer_view'
+    },
+  },
+  computed: {
+    getCurrentLinkName () {
+      return this.$route.name
     },
   },
 }
@@ -65,4 +76,5 @@ export default {
     }
   }
 }
+
 </style>

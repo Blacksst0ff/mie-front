@@ -1,6 +1,6 @@
 <template>
   <div class="customer-view">
-    <customer-view-header class="my-3" :customer=customer />
+    <customer-view-header class="my-3" :customer=customer :deal=dealsAttached />
     <va-tabs grow v-model="tabValue" style="width: 100%;">
       <va-tab
         v-for="title in tabTitles"
@@ -14,8 +14,8 @@
         <customer-view-info :customer=customer />
       </div>
 
-      <div v-if="tabValue == 1">
-        <customer-view-user :users=customer.user />
+      <div v-if="tabValue == 2">
+        <customer-view-user :users=usersAttached />
         <va-inner-loading class="flex-center py-3" :loading="isLoading">
           <va-button
             class="justify--center"
@@ -26,11 +26,23 @@
             {{ $t('buttons.add') }}
           </va-button>
         </va-inner-loading>
+        <va-modal
+          v-model="showCustomerAddUser"
+          :okText=" $t('forms.add') "
+          :cancelText=" $t('forms.cancel') "
+          size="large"
+        >
+          <customer-add-user />
+        </va-modal>
       </div>
 
-      <div v-if="tabValue == 2">
-        <customer-view-deal :deals=customer.deal />
-        <va-inner-loading class="flex-center py-3" :loading="isLoading">
+      <div v-if="tabValue == 1">
+        <customer-view-deal :deals=dealsAttached />
+        <va-inner-loading
+          v-if="customer.distinct_entity"
+          class="flex-center py-3"
+          :loading="isLoading"
+        >
           <va-button
             class="justify--center"
             outline
@@ -40,56 +52,81 @@
             {{ $t('buttons.add') }}
           </va-button>
         </va-inner-loading>
+        <va-modal
+          v-model="showCustomerAddDeal"
+          :okText=" $t('forms.customer.add.submit.step1') "
+          :cancelText=" $t('forms.cancel') "
+          size="large"
+        >
+          <customer-add-deal :customer_id="customer.id" />
+        </va-modal>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import customers from './components/data/customers.json'
 import CustomerViewHeader from './components/CustomerViewHeader'
 import CustomerViewInfo from './components/CustomerViewInfo'
 import CustomerViewUser from './components/CustomerViewUser'
 import CustomerViewDeal from './components/CustomerViewDeal'
+import CustomerAddUser from './components/CustomerAddUser'
+import CustomerAddDeal from './components/CustomerAddDeal'
 
 export default {
   name: 'CustomerView',
-  components: { CustomerViewHeader, CustomerViewDeal, CustomerViewUser, CustomerViewInfo },
+  components: {
+    CustomerViewHeader,
+    CustomerViewUser,
+    CustomerViewInfo,
+    CustomerViewDeal,
+    CustomerAddUser,
+    CustomerAddDeal,
+  },
   data () {
     return {
-      customer: null, // Init customer
-      tabValue: 0, // Default tab to open
+      tabValue: 1, // Default tab to open
       isLoading: false, // Loading for openning modals add user or deal
+      showCustomerAddUser: false,
+      showCustomerAddDeal: false,
+      hasContentSlot: true,
     }
   },
   computed: {
+    customer () {
+      return this.$store.getters.getCustomerByName(decodeURI(this.$props.name))
+    },
+    usersAttached () {
+      return this.$store.getters.getCustomerUsersAttached(this.customer.users)
+    },
+    dealsAttached () {
+      return this.$store.getters.getCustomerDealsAttached(this.customer.id)
+    },
     tabTitles () {
       return [
         this.$t('customer.tab.first'),
-        this.$t('customer.tab.second'),
         this.$t('customer.tab.third'),
+        this.$t('customer.tab.second'),
       ]
     },
   },
-  props: ['id'],
-  created () {
-    const i = customers.findIndex(customer => customer.id === this.id)
-    this.customer = customers[i]
-  },
+  props: ['name'],
   methods: {
     addUser () {
       this.isLoading = true
       setTimeout(() => {
         this.isLoading = false
         // Open Modal Add user
-      }, 1000)
+        this.showCustomerAddUser = true
+      }, 500)
     },
     addDeal () {
       this.isLoading = true
       setTimeout(() => {
         this.isLoading = false
         // Open Modal Add deal
-      }, 1000)
+        this.showCustomerAddDeal = true
+      }, 500)
     },
   },
 }

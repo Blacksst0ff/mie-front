@@ -2,10 +2,6 @@
   <va-list
     fit
   >
-    <va-list-label :style="{color:this.$themes.primary}">
-      {{ $t('customer.user.title') }}
-    </va-list-label>
-
     <template v-if="emptyUser()">
       <div class="empty-result">
         Nobody is attached to this customer yet!

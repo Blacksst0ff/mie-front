@@ -44,7 +44,7 @@
 
 <script>
 import { debounce } from 'lodash'
-import customers from './components/data/customers.json'
+import { mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -53,10 +53,15 @@ export default {
       customer: null,
       perPage: '10',
       perPageOptions: ['5', '10', '20'],
-      customers: customers,
     }
   },
   computed: {
+    ...mapGetters({
+      myCustomer: 'myCustomer',
+    }),
+    customers () {
+      return this.myCustomer('2')
+    },
     fields () {
       return [{
         name: '__slot:trend',
@@ -110,7 +115,7 @@ export default {
       return 'grey'
     },
     showCustomer (user) {
-      this.$router.push({ name: 'customer_view', params: { id: user.id } })
+      this.$router.push({ name: 'customer_view', params: { name: encodeURI(user.name) } })
     },
     search: debounce(function (term) {
       this.term = term

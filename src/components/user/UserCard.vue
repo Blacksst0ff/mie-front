@@ -81,16 +81,10 @@
 </template>
 
 <script>
-
-import dataUsers from '../customer/data/users.json'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'user-card',
-  data () {
-    return {
-      users: dataUsers,
-    }
-  },
   props: {
     user: {
       type: Object,
@@ -98,9 +92,11 @@ export default {
     },
   },
   computed: {
+    ...mapGetters({
+      getUser: 'getUser',
+    }),
     supervisor () {
-      const i = this.users.findIndex(u => u.id === this.user.manager)
-      return this.users[i]
+      return this.getUser(this.user.manager)
     },
   },
 }

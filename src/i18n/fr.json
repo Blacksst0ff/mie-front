@@ -17,9 +17,23 @@
       "text": "If you feel that it’s not right, please send us a message at ",
       "back_button": "Back to dashboard"
     },
+    "months": {
+      "january": "Janvier",
+      "february": "Fevrier",
+      "march": "Mars",
+      "april": "Avril",
+      "may": "Mai",
+      "june": "Juin",
+      "july": "Juillet",
+      "august": "Aout",
+      "september": "Septembere",
+      "october": "Octobre",
+      "november": "Novembre",
+      "december": "Decembre"
+    },
     "customer": {
       "tab": {
-        "first": "Générale",
+        "first": "Général",
         "second": "Utilisateurs",
         "third": "Affaires"
       },
@@ -28,6 +42,13 @@
       },
       "user": {
         "title": "Utilisateurs attachés"
+      }
+    },
+    "kpi": {
+      "tab": {
+        "first": "Général",
+        "second": "Statistique",
+        "third": "Historique"
       }
     },
     "rating": {
@@ -227,17 +248,38 @@
     },
     "forms": {
       "edit": "Editer",
+      "add": "Ajouter",
+      "cancel": "Annuler",
       "customer": {
         "add": {
           "title": "Ajouter un client",
-          "submitText": "Ajouter"
+          "submitText": "Ajouter",
+          "step1": "Info Client",
+          "step2": "Affaire liée",
+          "step3": "Utilisateur lié",
+          "submit": {
+            "step1": "Suivant",
+            "step2": "Suivant",
+            "step3": "Ajouter"
+          },
+          "user": {
+            "title": "Ajouter un utilisateur",
+            "select": "Choisie un utilisateur"
+          },
+          "deal": {
+            "title": "Ajouter une affaire",
+            "select": "Client"
+          }
         },
         "edit": {
           "title": "Editer un client",
           "submitText": "Mettre à jour"
         },
         "name": "Nom",
-        "logo": "Logo",
+        "distinct_entity": "Affaire-multiple",
+        "email": "Email",
+        "phone": "Téléphone",
+        "logo": "Télécharger un Logo",
         "country": "Pays",
         "address": "Adresse"
       },
@@ -355,7 +397,8 @@
       "popovers": "Popovers",
       "chat": "Chat",
       "wallet": "Portefeuille",
-      "deal": "Affaires"
+      "deal": "Affaires",
+      "sla": "Indicateurs"
     },
     "messages": {
       "all": "See all messages",

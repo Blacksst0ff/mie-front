@@ -17,6 +17,20 @@
     "text": "If you feel that it’s not right, please send us a message at ",
     "back_button": "Back to dashboard"
   },
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
   "customer": {
     "tab": {
       "first": "General",
@@ -28,6 +42,13 @@
     },
     "user": {
       "title": "Attached users"
+    }
+  },
+  "kpi": {
+    "tab": {
+      "first": "General",
+      "second": "Statistic",
+      "third": "History"
     }
   },
   "rating": {
@@ -227,17 +248,38 @@
   },
   "forms": {
     "edit": "Edit",
+    "add": "Add",
+    "cancel": "Cancel",
     "customer": {
       "add": {
         "title": "Add customer",
-        "submitText": "Add"
+        "submitText": "Add",
+        "step1": "Customer Info",
+        "step2": "Deal attached",
+        "step3": "User attached",
+        "submit": {
+          "step1": "Next",
+          "step2": "Next",
+          "step3": "Add"
+        },
+        "user": {
+          "title": "Add user",
+          "select": "Choose a user"
+        },
+        "deal": {
+          "title": "Add deal",
+          "select": "Customer"
+        }
       },
       "edit": {
         "title": "Edit customer",
         "submitText": "Edit"
       },
       "name": "Name",
-      "logo": "Logo",
+      "distinct_entity": "Multi deal",
+      "email": "Email",
+      "phone": "Phone",
+      "logo": "Upload Logo",
       "country": "Country",
       "address": "Address"
     },
@@ -355,7 +397,8 @@
     "popovers": "Popovers",
     "chat": "Chat",
     "wallet": "Wallet",
-    "deal": "Deals"
+    "deal": "Deals",
+    "sla": "Indicators"
   },
   "messages": {
     "all": "See all messages",

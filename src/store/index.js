@@ -5,6 +5,8 @@ import app from './modules/app'
 import customer from './modules/customer'
 import user from './modules/user'
 import deal from './modules/deal'
+import dealMode from './modules/deal_mode'
+import dealModel from './modules/deal_model'
 import sla from './modules/sla'
 import indicator from './modules/indicator'
 
@@ -20,6 +22,8 @@ const store = new Vuex.Store({
     customer,
     user,
     deal,
+    dealMode,
+    dealModel,
     sla,
     indicator,
   },

@@ -4,7 +4,7 @@
     style="overflow-x: auto;"
     :title="$t('forms.customer.add.deal.title')"
   >
-    <deal-form :deal="deal" :customer_id="customer_id" />
+    <deal-form :deal="deal" />
   </va-card>
 </template>
 
@@ -26,6 +26,8 @@ export default {
         id: '',
         name: '',
         client_id: this.customer_id,
+        mode_id: '',
+        model_id: '',
       },
     }
   },

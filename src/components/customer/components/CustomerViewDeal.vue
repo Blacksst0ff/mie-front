@@ -28,7 +28,7 @@
           <va-button
             flat small
             icon="fa fa-pencil"
-            @click="notify(deal.name)"
+            @click="editDeal(deal.id)"
           />
           <va-button
             v-if="deals.length > 1"
@@ -80,6 +80,9 @@ export default {
           return this.notifyDelete(deleteDeal.name)
         },
       })
+    },
+    editDeal (id) {
+      return this.$router.push({ name: 'deal_view', params: { id: id } })
     },
     notify (name) {
       this.showToast(`Clicked ${name}`, {

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="customer-view">
     <div class="row align--center">
       <div class="flex xs12 md6">
         <va-input
@@ -47,6 +47,7 @@ import { debounce } from 'lodash'
 import { mapGetters } from 'vuex'
 
 export default {
+  name: 'customer-list',
   data () {
     return {
       term: null,

@@ -54,7 +54,7 @@
         </va-inner-loading>
         <va-modal
           v-model="showCustomerAddDeal"
-          :okText=" $t('forms.customer.add.submit.step1') "
+          :okText=" $t('forms.add') "
           :cancelText=" $t('forms.cancel') "
           size="large"
         >

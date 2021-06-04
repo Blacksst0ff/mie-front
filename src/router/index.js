@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import AuthLayout from '../components/auth/AuthLayout'
 import AppLayout from '../components/admin/AppLayout'
+import ComponentLayout from '../components/admin/ComponentLayout'
 
 Vue.use(Router)
 
@@ -74,51 +75,142 @@ export default new Router({
       name: 'Admin',
       path: '/admin',
       component: AppLayout,
+      meta: {
+        breadcrumb: false,
+      },
       children: [
         {
           name: 'dashboard',
           path: 'dashboard',
           component: () => import('../components/dashboard/Dashboard.vue'),
           default: true,
+          meta: {
+            breadcrumb: 'breadcrumb.home',
+          },
         },
         {
           name: 'wallet',
           path: 'wallet',
           component: EmptyParentComponent,
+          meta: {
+            breadcrumb: 'breadcrumb.wallet',
+          },
           children: [
             {
               path: 'customer',
-              component: () => import('../components/customer/Customer.vue'),
+              component: ComponentLayout,
+              meta: {
+                breadcrumb: 'breadcrumb.customer',
+              },
               children: [
                 {
                   name: 'customer',
                   path: '',
                   component: () => import('../components/customer/CustomerList.vue'),
                   default: true,
+                  meta: {
+                    breadcrumb: false,
+                  },
                 },
                 {
                   name: 'customer_view',
-                  path: ':id',
+                  path: ':name',
                   component: () => import('../components/customer/CustomerView.vue'),
                   props: true,
+                  meta: {
+                    breadcrumb: false,
+                  },
+                },
+                {
+                  path: 'add',
+                  component: () => import('../components/customer/CustomerAdd.vue'),
+                  props: true,
+                  meta: {
+                    breadcrumb: 'breadcrumb.add',
+                  },
+                  children: [
+                    {
+                      name: 'customer_add',
+                      path: '',
+                      component: () => import('../components/customer/CustomerAddStep1.vue'),
+                      default: true,
+                      meta: {
+                        breadcrumb: 'forms.customer.add.step1',
+                      },
+                    },
+                    {
+                      name: 'customer_add_step2',
+                      path: '2',
+                      component: () => import('../components/customer/CustomerAddStep2.vue'),
+                      props: true,
+                      meta: {
+                        breadcrumb: 'forms.customer.add.step2',
+                      },
+                    },
+                    {
+                      name: 'customer_add_step3',
+                      path: '3',
+                      component: () => import('../components/customer/CustomerAddStep3.vue'),
+                      props: true,
+                      meta: {
+                        breadcrumb: 'forms.customer.add.step3',
+                      },
+                    },
+                  ],
                 },
               ],
             },
             {
               path: 'deal',
               component: () => import('../components/deal/Deal.vue'),
+              meta: {
+                breadcrumb: 'Deal',
+              },
               children: [
                 {
                   name: 'deal',
                   path: '',
                   component: () => import('../components/deal/DealList.vue'),
                   default: true,
+                  meta: {
+                    breadcrumb: false,
+                  },
                 },
                 {
                   name: 'deal_view',
                   path: ':id',
                   component: () => import('../components/deal/DealView.vue'),
                   props: true,
+                  meta: {
+                    breadcrumb: routeParams => `${routeParams.name}`,
+                  },
+                },
+              ],
+            },
+            {
+              path: 'kpi',
+              component: () => import('../components/kpi/Kpi.vue'),
+              meta: {
+                breadcrumb: 'Indicator',
+              },
+              children: [
+                {
+                  name: 'kpi',
+                  path: '',
+                  component: () => import('../components/kpi/KpiList.vue'),
+                  default: true,
+                  meta: {
+                    breadcrumb: false,
+                  },
+                },
+                {
+                  name: 'kpi_view',
+                  path: ':id',
+                  component: () => import('../components/kpi/KpiView.vue'),
+                  props: true,
+                  meta: {
+                    breadcrumb: routeParams => `${routeParams.id}`,
+                  },
                 },
               ],
             },

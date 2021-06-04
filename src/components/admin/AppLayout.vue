@@ -29,7 +29,8 @@
           slot="content"
           role="main"
         >
-          <router-view/>
+          <breadcrumb v-if="this.$route.name !== 'dashboard'"/>
+          <router-view />
         </main>
       </div>
     </div>
@@ -41,6 +42,7 @@ import AppPageLayout from './AppPageLayout'
 import AppNavbar from './app-navbar/AppNavbar'
 import AppTopbar from './app-topbar/AppTopbar'
 import AppSidebar from './app-sidebar/AppSidebar'
+import Breadcrumb from '../custom/Breadcrumb'
 import { originalTheme, corporateTheme } from 'vuestic-ui/src/services/themes'
 import {
   ColorThemeActionsMixin,
@@ -54,6 +56,7 @@ export default {
     AppNavbar,
     AppTopbar,
     AppSidebar,
+    Breadcrumb,
   },
   data () {
     return {

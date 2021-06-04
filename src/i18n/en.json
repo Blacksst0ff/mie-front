@@ -12,6 +12,12 @@
     "termsOfUse": "Terms of Use.",
     "reset_password": "Reset password"
   },
+  "breadcrumb": {
+    "home": "Dashboard",
+    "wallet": "Wallet",
+    "customer": "Customer",
+    "add": "Add"
+  },
   "404": {
     "title": "This page’s gone fishing.",
     "text": "If you feel that it’s not right, please send us a message at ",
@@ -42,6 +48,12 @@
     },
     "user": {
       "title": "Attached users"
+    }
+  },
+  "deal": {
+    "tab": {
+      "first": "General",
+      "second": "KPI"
     }
   },
   "kpi": {
@@ -104,7 +116,8 @@
     "add": "Add",
     "edit": "Edit",
     "update": "Update",
-    "undo": "Return to list"
+    "undo": "Back",
+    "next": "Next"
   },
   "charts": {
     "horizontalBarChart": "Horizontal Bar Chart",
@@ -268,7 +281,9 @@
         },
         "deal": {
           "title": "Add deal",
-          "select": "Customer"
+          "mode": "Production mode",
+          "model": "Model",
+          "customer": "Customer"
         }
       },
       "edit": {
@@ -500,6 +515,14 @@
   "tables": {
     "customer": {
       "tableTitle": "My customers"
+    },
+    "deal": {
+      "tableTitle": "My deals",
+      "headings": {
+        "customer": "Customer",
+        "name": "Deal name",
+        "sla": "KPI"
+      }
     },
     "basic": "Basic Table",
     "stripedHoverable": "Striped, Hoverable",

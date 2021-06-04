@@ -27,6 +27,10 @@ export const navigationRoutes = {
           name: 'deal',
           displayName: 'menu.deal',
         },
+        {
+          name: 'kpi',
+          displayName: 'menu.sla',
+        },
       ],
     },
     {

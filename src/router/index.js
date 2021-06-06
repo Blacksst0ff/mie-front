@@ -74,6 +74,7 @@ export default new Router({
     {
       name: 'Admin',
       path: '/admin',
+      redirect: 'dashboard',
       component: AppLayout,
       meta: {
         breadcrumb: false,
@@ -91,7 +92,7 @@ export default new Router({
         {
           name: 'wallet',
           path: 'wallet',
-          component: EmptyParentComponent,
+          component: () => import('../components/wallet/Wallet.vue'),
           meta: {
             breadcrumb: 'breadcrumb.wallet',
           },
